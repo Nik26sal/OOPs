@@ -1,0 +1,42 @@
+OOPs = Object Oriented Programming
+concept of making own dataType using concept oof Class and Object
+Class == Named of group of Variables and functions
+         It is an templates of objects or instances
+         It is a type of Logical Constructor that are not occuping space in heap memory
+         Varables inside the class called as the Instance Variables
+Objects == Instance of classes.
+           It is a physical reality of classes.
+           Occuping space in heap memory
+           The essential properties of Objects:1.State 2.identity 3.Behaviour
+
+Eg.  ClassName variableName(refrenceType) = new ClassName();
+
+--In the given example the refrence type is store at compile time in stack memory and the className at the end develope at runtime in heap memory that send the     refrence or address of object to  the refrence type started from right to left;
+
+
+--New Keyword:: The new Operator in the given example is used to dynamically allocate
+                the memory at runtime in heap.
+
+Question1.why the java language called as platform independent language?
+Answer... the source code(.java) is converted into the bytecode or assembly language code(.class) by java Compiler and then the byte code is converted into the 
+          machine code(.exe) by JVM Thats why thw java language is called as Platform independent language
+
+Question2.Type of Language?
+Answer:Statically defined Language:::-- Language in which the datatype of the variable is defined by the user.eg.Java,C++,c etc.
+       
+       Dynamically defined Language:::-- Language in which the datatype of the varaible is defined dynamically.eg.python,javaScript etc.
+
+Java Consturctor:Functions that run when youy create the Object and it allocates the some variables to that object.
+                 if we don't create the constructor the then a default constructor is provided by JVM that assign default value to the object of the instance variabe
+                 Constuctor and functions both are overloaded at compile time
+                 Constructor are of same name as the Class name with no return type.
+                 Overloading means that function with same name but differnce occur in Parameter or the return type or both
+
+
+--To call the instance variable and method of object user used the '.'operator this is used to link the instance variable and the refrence variable
+
+This Keyword:: this Keyword is used for three ways in oops
+               1.. if the parameter name and the instance variable name of the class is same in the constructor then the JVM confuse then to solve this problem this 
+                   keyword is used.
+               2.. on calling the constuctor the address of the object is transfer to the this keyword 
+               3.. this keyword is used to call the method of the same class.
