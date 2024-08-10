@@ -40,3 +40,84 @@ This Keyword:: this Keyword is used for three ways in oops
                    keyword is used.
                2.. on calling the constuctor the address of the object is transfer to the this keyword 
                3.. this keyword is used to call the method of the same class.
+
+Wrapper Class :::: Class of Primitive DataTypes. eg.Integer of int,Float of float,Boolean of boolean etc.
+       
+Final variable ::: Final keyword make the variable constant and it should be always initialize.It cannot be change.
+                   final guarrenties this immutablity only when the instance variables are primitive datatypes not the refrence type
+                   like object and stuff why because the instance variable of refrence type has a final modifier behind it 
+                   the value of instance variable will never change the refrence to object will never change it is always refer tor the 
+                   same object but the value of object can change.when the object is final then we cannot reasign it.
+
+-----------In java all are pass by value.
+
+Garbage collection :: this is used to collect those object which don't have refrence 
+                      Finalize method is used to do it manually.
+
+
+
+
+
+
+
+
+
+Purely defined Notes ...................................................
+
+Object-Oriented Programming (OOP) Concepts
+1. Class
+        Definition: A class is a blueprint for creating objects. It defines a type of object by specifying its attributes (fields) and 
+        behaviors (methods). It is a logical construct that outlines what objects of that class will contain and how they will behave.
+        Memory: Classes themselves do not occupy memory for their data. Memory is allocated for objects (instances) created from the 
+        class. The class definition exists in the compiled form (bytecode) but doesn’t occupy space like an object does.
+
+2.Object
+        Definition: An object is an instance of a class. It is a concrete realization of the class, holding actual values for its 
+        attributes and capable of executing its methods.
+        Properties: Objects have state (the values of attributes), identity (a unique reference or address), and behavior (methods or 
+        functions defined in the class).
+        Memory Allocation: Objects are allocated memory in the heap, where they reside until they are no longer referenced and garbage 
+        collected.
+
+Syntax for Object Creation
+Example: ClassName variableName = new ClassName();
+Explanation: new ClassName() creates a new instance of ClassName and returns a reference to it. The reference is stored in variableName. The class definition (template) exists in the class file, while the object itself is created in the heap.
+New Keyword
+
+Purpose: The new keyword is used to allocate memory for a new object at runtime. It creates an instance of the class and returns a reference to that object.
+
+Java-Specific Questions
+Oues1..Why is Java called a platform-independent language?
+Explanation: Java is platform-independent because it uses the Java Virtual Machine (JVM). Java code is compiled into bytecode (.class files) which is platform-independent. The JVM interprets or compiles this bytecode into machine-specific code, allowing Java programs to run on any device with a compatible JVM.
+
+Types of Languages
+1.Statically Typed Languages: In these languages, the type of a variable is known and checked at compile time (e.g., Java, C++, C).
+2.Dynamically Typed Languages: In these languages, the type of a variable is determined at runtime (e.g., Python, JavaScript).
+
+Java Constructor
+             Definition: A constructor is a special method that is invoked when an object is created. It initializes the object.
+             Default Constructor: If no constructors are explicitly defined, Java provides a no-argument constructor that initializes 
+             instance variables to default values.
+
+Constructor Overloading: Java allows multiple constructors with different parameter lists, known as constructor overloading.
+Name and Return Type: Constructors have the same name as the class and do not have a return type.
+
+The this Keyword
+Usage:
+1.Disambiguation: this is used to differentiate between instance variables and parameters when they have the same name.
+                  Constructor Chaining: this() can call another constructor in the same class.
+2.Method Invocation: this can be used to call other methods in the same class.
+
+Wrapper Classes
+Purpose: Wrapper classes allow primitive types to be treated as objects. Examples include Integer (for int), Double (for double), and Boolean (for boolean).
+
+Final Keyword
+Final Variables: Variables declared with the final keyword can only be assigned once. This makes them constants.
+Final Reference Variables: A final reference variable cannot be reassigned to refer to a different object, but the object it points to can still be modified if it is mutable.
+
+Pass-by-Value
+Explanation: Java uses pass-by-value for method arguments. For primitive types, the value itself is passed. For objects, the value of the reference (i.e., the address of the object) is passed, but not the actual object. This means that while you can modify the object’s state, you cannot change the reference to point to a different object.
+Garbage Collection
+
+Purpose: Garbage collection is an automatic memory management process that reclaims memory used by objects that are no longer reachable.
+Finalize Method: The finalize() method can be overridden to perform cleanup operations before an object is collected by the garbage collector. However, its use is generally discouraged in favor of more predictable resource management techniques.
