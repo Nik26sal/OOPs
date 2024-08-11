@@ -1,0 +1,64 @@
+Packages : it is just like a container that holds the classes in a conpartment
+           it contians only unique classes.
+
+Static KeyWord: when user want to use such properties that are common for all then we use it 
+                like the population is common for all the Humans
+                static method or the static variable can be access with or without the refrece of object(without refrence it can access by classname)
+                static property not depends on objects or instances
+
+Ques>> why main method declared as static ?
+Answer>.. Bcz the static method not depends on object it can be access without the refrence of object and to run the java program the the main method runs first and if the maiin method 
+          not a static then how the object is made before the main method  that's why the main method declares as static 
+
+static method only access the static method inside it non static  cannot access inside it
+static method run first at compile time 
+
+// static void fun(){
+     greeting();//giving error due to the greeting method are non static 
+   }
+void greeting(){};
+
+.............................................Pure notes.................
+Packages
+Definition: Packages in Java are essentially containers for classes, interfaces, and sub-packages. They help organize code into a modular structure and avoid naming conflicts.
+Uniqueness: While packages help in organizing classes, they do not enforce the uniqueness of classes within themselves. You could technically have classes with the same name in different packages.
+
+Static Keyword
+Purpose: The static keyword is used to define class-level members (methods and variables) that are shared among all instances of the class. These members can be accessed without creating an instance of the class.
+Static Variables: Shared among all instances. For example, a static variable population would be the same for all instances of the Human class.
+Static Methods: Can be called on the class itself, not requiring an instance. They cannot access non-static members directly because non-static members belong to individual instances.
+
+Main Method
+Declaration as Static: The main method is declared as static because it is the entry point of the Java application. When the Java Virtual Machine (JVM) starts, it doesn't create an instance of the class; it simply calls the main method directly. Thus, main must be static to be accessible without needing an object instance.
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+In this example, the main method is static, which allows the JVM to call it without creating an instance of the Main class.
+
+Accessing Members in Static Methods
+Static Context Restrictions: A static method can only directly access other static members (variables and methods) of the class. It cannot access non-static members because non-static members are tied to specific instances.
+
+public class Example {
+    static int staticVar = 10;
+    int instanceVar = 20;
+
+    static void staticMethod() {
+        System.out.println(staticVar); // Allowed
+        // System.out.println(instanceVar); // Error: Cannot make a static reference to the non-static field instanceVar
+    }
+
+    void instanceMethod() {
+        System.out.println(staticVar); // Allowed
+        System.out.println(instanceVar); // Allowed
+    }
+}
+Non-static Methods: Non-static methods can access both static and non-static members because they operate on specific instances.
+
+Summary
+Packages organize classes but don’t enforce uniqueness.
+Static members are shared among all instances and can be accessed without creating an instance.
+Main method is static to allow the JVM to call it directly.
+Static methods can only access other static members and not instance (non-static) members directly.
