@@ -3,7 +3,7 @@ Packages : it is just like a container that holds the classes in a conpartment
 
 Static KeyWord: when user want to use such properties that are common for all then we use it 
                 like the population is common for all the Humans
-                static method or the static variable can be access with or without the refrece of object(without refrence it can access by classname)
+                static method or the static variable can be access with or without the reference of object(without refrence it can access by classname)
                 static property not depends on objects or instances
 
 Ques>> why main method declared as static ?
@@ -18,6 +18,13 @@ static method run first at compile time
    }
 void greeting(){};
 
+--Inside the class if a method is static then this cannot used by this method bcz it not depends on object
+--Static block run once when the program is run
+--outside class cannot be static
+--if the inner class is non static then the object of this class is not make because it depends on outer class then this class access by making it 
+  static or making class outside the parent class were it independent on any other class.
+--SingleTon class -- class that have only one object. this can be done by making constructor private.
+                     
 .............................................Pure notes.................
 Packages
 Definition: Packages in Java are essentially containers for classes, interfaces, and sub-packages. They help organize code into a modular structure and avoid naming conflicts.
@@ -37,6 +44,7 @@ public class Main {
     }
 }
 In this example, the main method is static, which allows the JVM to call it without creating an instance of the Main class.
+
 
 Accessing Members in Static Methods
 Static Context Restrictions: A static method can only directly access other static members (variables and methods) of the class. It cannot access non-static members because non-static members are tied to specific instances.
@@ -62,3 +70,42 @@ Packages organize classes but don’t enforce uniqueness.
 Static members are shared among all instances and can be accessed without creating an instance.
 Main method is static to allow the JVM to call it directly.
 Static methods can only access other static members and not instance (non-static) members directly.
+
+
+Static Methods and this Keyword:
+
+Inside a static method, you cannot use the this keyword because this refers to the current instance of the class, and static methods belong to the class itself, not to any particular instance. Static methods can only access other static members of the class.
+Static Block:
+
+A static block in Java is executed only once when the class is first loaded into memory. It is used for initializing static variables or performing setup tasks. Static blocks are executed before the main method and before any static methods are called.
+Static Members and Outside the Class:
+
+You cannot have a static top-level class in Java; only nested (inner) classes can be static. However, you can have static fields, methods, and blocks in a class. Static members are associated with the class itself rather than instances of the class.
+Static Inner Classes:
+
+An inner class (non-static nested class) has access to the instance members of the outer class and can only be instantiated in the context of an instance of the outer class. A static nested class (also known as a static inner class) does not have access to instance members of the outer class but can be instantiated without an instance of the outer class.
+Singleton Pattern:
+
+A singleton class is a design pattern that restricts the instantiation of a class to a single object. This can be achieved by:
+Making the constructor private.
+Providing a static method to get the unique instance of the class.
+Ensuring that the class manages the instance creation and access.
+Here is a simple implementation of a singleton class:
+
+java
+Copy code
+public class Singleton {
+    // The single instance of the class
+    private static Singleton instance;
+
+    // Private constructor to prevent instantiation
+    private Singleton() {}
+
+    // Static method to provide access to the instance
+    public static Singleton getInstance() {
+        if (instance == null) {
+            instance = new Singleton();
+        }
+        return instance;
+    }
+}
