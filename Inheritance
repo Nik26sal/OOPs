@@ -1,0 +1,119 @@
+Inherit the parent class by child class to access their properties
+It is done by extends keyWord 
+A class Inherit the one parent class 
+super() is used to access the constructor of parent class
+child class don't access those method of parent class which are declare as private
+child can access the properties of parent but the parent are not able to access the properties of child class
+type of refrence variable decided that what type of property can be access
+if the refrence is of child type and the object is of parent class then it give error at compile time because object run first and the refrence decided that which property access so when we write like it then the proprties of parent class not been initialize so 
+it not work
+
+if parent class and child class have a same property then to call the propety of parent class use super.propt
+
+Types of Inheritance ::
+1.Single Inheritance :: one class extends another class 
+2.Multilevel inheritance :: one class extends other then other can access other and so on.
+3.Multiple Inheritance :: one class extending more than one classes.Multiple Inheritance not supported in java because if both parent class have same property then which can be access
+4.Heirarical Inheritance  :: one class is Inherit by multiple classes.
+5.Hybrid Inheritance :: Combiantion of single and multiple Inheritance so java not supported it also
+
+
+Inheritance in Java
+Basic Concept
+
+Inheritance allows a new class (child class) to inherit properties and methods from an existing class (parent class). It promotes code reusability and establishes a natural hierarchy.
+extends Keyword
+
+In Java, the extends keyword is used to create a subclass (child class) that inherits from a superclass (parent class).
+java
+Copy code
+class Parent {
+    // Parent class code
+}
+
+class Child extends Parent {
+    // Child class code
+}
+super() Keyword
+
+The super() keyword is used to call the constructor of the parent class from the child class constructor. This helps in initializing the parent class's fields and ensuring proper object construction.
+java
+Copy code
+class Parent {
+    Parent() {
+        System.out.println("Parent constructor");
+    }
+}
+
+class Child extends Parent {
+    Child() {
+        super(); // Calls Parent class constructor
+        System.out.println("Child constructor");
+    }
+}
+Access Modifiers and Visibility
+
+Private: Private members of a parent class are not accessible by child classes. They are only accessible within the parent class itself.
+Protected: Protected members can be accessed by child classes and classes within the same package.
+Public: Public members can be accessed from any other class.
+Default: Default (package-private) members are accessible to other classes within the same package.
+Accessing Parent Class Properties
+
+If both parent and child classes have a property with the same name, the child class can use super.propertyName to access the parent class's property.
+java
+Copy code
+class Parent {
+    String prop = "Parent Property";
+}
+
+class Child extends Parent {
+    String prop = "Child Property";
+
+    void display() {
+        System.out.println("Child property: " + prop);
+        System.out.println("Parent property: " + super.prop);
+    }
+}
+Types of Inheritance
+
+Single Inheritance: A class (child) extends one other class (parent). Java supports this.
+
+java
+Copy code
+class A {}
+class B extends A {}
+Multilevel Inheritance: A class extends another class, which in turn extends another class.
+
+java
+Copy code
+class A {}
+class B extends A {}
+class C extends B {}
+Multiple Inheritance: Java does not support multiple inheritance with classes due to the ambiguity of having multiple parent classes. However, multiple inheritance can be achieved through interfaces.
+
+java
+Copy code
+interface A {}
+interface B {}
+class C implements A, B {}
+Hierarchical Inheritance: One class (parent) is inherited by multiple classes (children).
+
+java
+Copy code
+class A {}
+class B extends A {}
+class C extends A {}
+Hybrid Inheritance: A combination of multiple types of inheritance, often leading to complexity and ambiguity. Java does not support hybrid inheritance directly with classes but allows it with interfaces.
+
+Reference Variable Type
+
+The type of reference variable determines which methods can be called, but it does not affect the actual object type. For example:
+
+java
+Copy code
+Parent obj = new Child(); // Legal: Parent reference to Child object
+obj.someMethod(); // Calls method from Child if overridden
+If you attempt to use a parent reference for operations specific to the child class that are not defined in the parent class, you will encounter compilation errors.
+
+Summary
+Inheritance is a powerful feature in Java that helps in creating a hierarchy of classes and promoting code reuse. Understanding access modifiers, the use of super(), and the types of inheritance are crucial for effective object-oriented programming.
