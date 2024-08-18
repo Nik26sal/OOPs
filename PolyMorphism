@@ -1,0 +1,64 @@
+Poly = many morphism = ways to do a particular thing
+Polymorphism means to do  a particular work by many ways called as polyMorphism 
+
+It is of two type:
+1.Static polyMorphism Or Compile time Polymorphism : This method can be achieve by method overloading it means making method with same name in same class but the return type and the number or type of parameter is differnt 
+2.Dynamic PolyMorphism or Run time polyMorphism : This method can be achieve by Method overriding it means that making same method with differnt body in differnt class(Child class method is same as the parent class method ).
+                                                  which method is run is decided at runtime on the basis of type of object and this can be done by Dynamic method patching.This method is also called as upcasting and late binding .
+Final keyWord is used to make the thing constant and if the method is declare as final then it cannot be overridden by child class this called as early - binding.
+if a class is declare as final the it cannot be inherit because all the method of the class will become final 
+
+Static method cnnot be override it is because the static keyword not depend on object 
+
+
+Polymorphism allows objects to be treated as instances of their parent class rather than their actual class. It enables a single function or method to operate in different ways based on the object it is applied to.
+
+There are two main types of polymorphism:
+
+Static Polymorphism (Compile-time Polymorphism):
+
+Method Overloading: This is achieved by defining multiple methods with the same name but different parameter lists (type, number, or both) in the same class. The correct method to call is determined at compile-time based on the method signature used.
+java
+Copy code
+class Example {
+    void display(int a) {
+        System.out.println("Argument: " + a);
+    }
+    
+    void display(String a) {
+        System.out.println("Argument: " + a);
+    }
+}
+Dynamic Polymorphism (Run-time Polymorphism):
+
+Method Overriding: This involves redefining a method in a subclass that has the same name, return type, and parameters as in its parent class. The method in the subclass overrides the parent class’s method. The specific method invoked is determined at runtime based on the object's actual type, not the reference type.
+java
+Copy code
+class Parent {
+    void show() {
+        System.out.println("Parent's show()");
+    }
+}
+
+class Child extends Parent {
+    @Override
+    void show() {
+        System.out.println("Child's show()");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Parent obj = new Child();
+        obj.show();  // Outputs: Child's show()
+    }
+}
+Additional Concepts
+Final Keyword:
+
+When applied to a method, the final keyword means the method cannot be overridden by subclasses. This is known as early binding.
+When applied to a class, final means the class cannot be subclassed or inherited.
+When applied to a variable, final means the variable's value cannot be changed once assigned.
+Static Methods:
+
+Static methods belong to the class rather than any instance of the class. As such, they cannot be overridden because they are not bound to an instance of the class. Instead, they can be hidden by another static method with the same name in a subclass, but this is not considered polymorphism.
