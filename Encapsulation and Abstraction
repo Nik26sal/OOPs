@@ -1,0 +1,6 @@
+Encapsulation :: warpping up the implementation of dataMembers and stuff and method in the class 
+Abstraction :: hiding unnecessary details and showing valuable information 
+example :: car key act as a abstraction 
+in the above example the user use the key tostart the car but it does not know that how the car start internally so the method of starting car are wrap and to use this method key is given 
+it is just like a getter setter used in the java program
+
