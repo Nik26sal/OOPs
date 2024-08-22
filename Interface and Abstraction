@@ -1,0 +1,8 @@
+Abstraction
+-Abstract method:: the methe which do not have body it only have name they only depends on child class to give body of that function so it is compulsory that 
+                   if a child class extends a abstract class than the method that are abstract in nature are overrideen by child class compulsory.
+
+if a class contains the abstract method then the class will declared as  abtract class this class also contains the non abstract method
+Object of abstract class is not created
+abstract consructors are not make
+abstract static method are not written bcz abstract must be overridden but the static are not .final also
