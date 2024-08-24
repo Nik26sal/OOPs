@@ -1,0 +1,32 @@
+Access Control
+
+                class     package    subclass(same pkg)   SubClass(different pkg)    world(diff pkg but not subclass)
+
+Public           +         +              +                   +                       +
+
+protected        +         +              +                   +(mandatory that the refrence is of subclass )
+
+no modifier      +         +              +
+(default)    
+
+private          +
+
+
+Packages
+
+
+in-built packages
+
+lang : language specific stuff
+i/o  : input output file
+util : utility //Data Str.class  or collection class
+applet : devlopment time
+awt : grphical use
+
+
+object class
+
+Top most class in inheritance
+if a class does not extend any class then bydefault it extend the object class
+
+ 
